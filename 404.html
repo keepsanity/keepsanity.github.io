@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — keepsanity</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap">
+<link rel="stylesheet" href="/assets/style.css">
+<style>
+  .oops { min-height: 80vh; display: grid; place-items: center; text-align: center; }
+  .oops h1 { font-family: var(--font-display); font-size: clamp(4rem, 20vw, 10rem); }
+  .oops .box {
+    background: var(--card); border: var(--bw) solid var(--line);
+    box-shadow: var(--sx) var(--sx) 0 var(--shadow);
+    padding: 2.5rem 2rem; max-width: 520px;
+  }
+</style>
+</head>
+<body>
+<main class="oops">
+  <div class="wrap">
+    <div class="box">
+      <h1>404</h1>
+      <p style="font-weight:800">이 주소에는 아무것도 없어요.</p>
+      <p style="margin-bottom:1.75rem">주소를 다시 확인하거나, 홈으로 돌아가 프로젝트 목록을 봐주세요.</p>
+      <a class="btn btn-lg btn-yellow" href="/">홈으로 가기</a>
+    </div>
+  </div>
+</main>
+<script>
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('ks-theme'); } catch (e) {}
+    var dark = saved ? saved === 'dark'
+      : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  })();
+</script>
+</body>
+</html>
