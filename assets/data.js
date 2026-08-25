@@ -127,8 +127,8 @@ const PROJECTS = [
     features: ['AI 기억 정리', '관련 로어만 자동 주입', 'hybrid · vector · bm25 · ai 엔진', 'BM25 + 벡터 RRF 융합', 'Vector Storage 연동'],
     site: null,
     repo: 'https://github.com/keepsanity/SillyTavern-LivingLorebook',
-    git: 'https://github.com/keepsanity/SillyTavern-LivingLorebook',
-    hideRepo: true, // GitHub 링크 버튼만 숨김 (카드는 노출)
+    git: null,        // 아직 공개 전 — Git URL 복사 버튼 숨김
+    hideRepo: true,   // GitHub 링크 버튼도 숨김 (카드 자체는 노출)
   },
   {
     id: 'sillytheme',
