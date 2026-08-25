@@ -116,7 +116,6 @@ const PROJECTS = [
     repo: 'https://github.com/keepsanity/SillyTavern-Atelier',
     git: 'https://github.com/keepsanity/SillyTavern-Atelier',
   },
-  /* 잠시 숨김 — 다시 보이려면 이 주석을 풀어주세요
   {
     id: 'livinglorebook',
     name: 'Living Lorebook',
@@ -129,8 +128,8 @@ const PROJECTS = [
     site: null,
     repo: 'https://github.com/keepsanity/SillyTavern-LivingLorebook',
     git: 'https://github.com/keepsanity/SillyTavern-LivingLorebook',
+    hideRepo: true, // GitHub 링크 버튼만 숨김 (카드는 노출)
   },
-  */
   {
     id: 'sillytheme',
     name: 'SillyTheme',

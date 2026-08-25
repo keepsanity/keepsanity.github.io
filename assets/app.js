@@ -164,11 +164,13 @@
       actions.appendChild(copy);
     }
 
-    const repo = el('a', 'btn btn-ghost', 'GitHub ↗');
-    repo.href = p.repo;
-    repo.target = '_blank';
-    repo.rel = 'noopener';
-    actions.appendChild(repo);
+    if (!p.hideRepo) {
+      const repo = el('a', 'btn btn-ghost', 'GitHub ↗');
+      repo.href = p.repo;
+      repo.target = '_blank';
+      repo.rel = 'noopener';
+      actions.appendChild(repo);
+    }
 
     body.appendChild(actions);
     card.appendChild(body);
