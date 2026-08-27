@@ -249,7 +249,7 @@
 
     const me = el('div', 'bubble me', '테마 구경 중!');
     me.style.background = t.swatch[1];
-    me.style.color = t.dark ? t.swatch[2] : '#2a241c';
+    me.style.color = t.dark ? t.swatch[2] : '#232228';
 
     /* 밝은 테마의 상대 말풍선은 배경색이 밝으면 글자를 어둡게 */
     if (!t.dark) {
@@ -258,7 +258,7 @@
         const lum = (parseInt(c.slice(0, 2), 16) * 299 +
                      parseInt(c.slice(2, 4), 16) * 587 +
                      parseInt(c.slice(4, 6), 16) * 114) / 1000;
-        them.style.color = lum > 150 ? '#2a241c' : '#ffffff';
+        them.style.color = lum > 150 ? '#232228' : '#ffffff';
       }
     }
 
@@ -307,9 +307,9 @@
     }
     target.animate(
       [
-        { boxShadow: '0 0 0 0 rgba(180, 138, 90, 0)' },
-        { boxShadow: '0 0 0 6px rgba(180, 138, 90, 0.25)' },
-        { boxShadow: '0 0 0 0 rgba(180, 138, 90, 0)' },
+        { boxShadow: '0 0 0 0 rgba(124, 104, 194, 0)' },
+        { boxShadow: '0 0 0 6px rgba(124, 104, 194, 0.28)' },
+        { boxShadow: '0 0 0 0 rgba(124, 104, 194, 0)' },
       ],
       { duration: 900, iterations: 1 }
     );

@@ -1,24 +1,24 @@
 /* ==========================================================================
-   keepsanity — warm minimal
+   keepsanity — soft minimal
    ========================================================================== */
 
 /* ---------- tokens ---------- */
 :root {
-  --ink: #2a241c;
-  --ink-2: #52493a;
-  --muted: #8c8172;
-  --paper: #faf6ef;
-  --bg-alt: #f1e9da;
+  --ink: #232228;
+  --ink-2: #57545f;
+  --muted: #918d99;
+  --paper: #faf9fc;
+  --bg-alt: #f0edf5;
   --surface: #ffffff;
-  --line: #e7ddc9;
-  --line-strong: #d8c8a8;
-  --shadow-rgb: 42, 32, 16;
+  --line: #e6e2ec;
+  --line-strong: #d5cee0;
+  --shadow-rgb: 40, 34, 58;
 
-  --accent: #bf8a45;        /* 브랜드 accent — 주요 버튼 */
-  --accent-ink: #2a241c;    /* accent 배경 위 글자 */
-  --accent-web:   #6d9282;  /* 웹 도구 */
-  --accent-ext:   #c17c4d;  /* 확장 */
-  --accent-theme: #9a7bab;  /* 테마 */
+  --accent: #7c68c2;         /* 브랜드 accent — 주요 버튼 */
+  --accent-ink: #ffffff;     /* accent 배경 위 글자 */
+  --accent-web:   #6f93b8;   /* 웹 도구 — 더스티 블루 */
+  --accent-ext:   #bf6e93;   /* 확장 — 더스티 로즈 */
+  --accent-theme: #9a6fae;   /* 테마 — 플럼 */
 
   --radius: 16px;
   --radius-sm: 10px;
@@ -29,21 +29,21 @@
 }
 
 :root[data-theme="dark"] {
-  --ink: #efe6d6;
-  --ink-2: #cfc3ac;
-  --muted: #9d907c;
-  --paper: #1d1912;
-  --bg-alt: #251f17;
-  --surface: #292219;
-  --line: rgba(239, 230, 214, 0.11);
-  --line-strong: rgba(239, 230, 214, 0.22);
+  --ink: #eae8f0;
+  --ink-2: #c7c3d1;
+  --muted: #938fa0;
+  --paper: #19181e;
+  --bg-alt: #201f27;
+  --surface: #24232b;
+  --line: rgba(234, 232, 240, 0.1);
+  --line-strong: rgba(234, 232, 240, 0.2);
   --shadow-rgb: 0, 0, 0;
 
-  --accent: #d5a668;
-  --accent-ink: #1d1912;
-  --accent-web:   #85ab99;
-  --accent-ext:   #d99a6c;
-  --accent-theme: #b498c4;
+  --accent: #ab9be0;
+  --accent-ink: #19181e;
+  --accent-web:   #93b7d9;
+  --accent-ext:   #e099b6;
+  --accent-theme: #bb98cf;
 }
 
 /* ---------- reset ---------- */
