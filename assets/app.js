@@ -114,7 +114,7 @@
     card.dataset.search = [p.name, p.sub, p.desc, p.features.join(' '), TYPE_LABEL[p.type]]
       .join(' ')
       .toLowerCase();
-    card.style.setProperty('--accent', 'var(--' + p.color + ')');
+    /* 카드 색은 타입(web/ext/theme)에 따라 CSS에서 자동으로 정해집니다 */
 
     /* 헤더 */
     const top = el('div', 'card-top');
@@ -150,7 +150,7 @@
     const actions = el('div', 'card-actions');
 
     if (p.site) {
-      const open = el('a', 'btn btn-cyan', '사이트 열기 ↗');
+      const open = el('a', 'btn btn-primary', '사이트 열기 ↗');
       open.href = p.site;
       open.target = '_blank';
       open.rel = 'noopener';
@@ -158,7 +158,7 @@
     }
 
     if (p.git) {
-      const copy = el('button', 'btn btn-yellow', 'Git URL 복사');
+      const copy = el('button', 'btn btn-primary', 'Git URL 복사');
       copy.type = 'button';
       copy.setAttribute('data-copy', p.git);
       actions.appendChild(copy);
@@ -249,7 +249,7 @@
 
     const me = el('div', 'bubble me', '테마 구경 중!');
     me.style.background = t.swatch[1];
-    me.style.color = t.dark ? t.swatch[2] : '#14110f';
+    me.style.color = t.dark ? t.swatch[2] : '#2a241c';
 
     /* 밝은 테마의 상대 말풍선은 배경색이 밝으면 글자를 어둡게 */
     if (!t.dark) {
@@ -258,7 +258,7 @@
         const lum = (parseInt(c.slice(0, 2), 16) * 299 +
                      parseInt(c.slice(2, 4), 16) * 587 +
                      parseInt(c.slice(4, 6), 16) * 114) / 1000;
-        them.style.color = lum > 150 ? '#14110f' : '#ffffff';
+        them.style.color = lum > 150 ? '#2a241c' : '#ffffff';
       }
     }
 
@@ -272,7 +272,7 @@
 
     const actions = el('div', 'theme-actions');
 
-    const download = el('a', 'btn btn-sm btn-yellow', '다운로드');
+    const download = el('a', 'btn btn-sm btn-primary', '다운로드');
     download.href = THEME_RAW + t.file.split('/').map(encodeURIComponent).join('/');
     download.setAttribute('download', t.name + '.json');
     actions.appendChild(download);
@@ -306,8 +306,12 @@
       if (allChip) allChip.click();
     }
     target.animate(
-      [{ transform: 'translate(0,0)' }, { transform: 'translate(-6px,-6px)' }, { transform: 'translate(0,0)' }],
-      { duration: 480, iterations: 2 }
+      [
+        { boxShadow: '0 0 0 0 rgba(180, 138, 90, 0)' },
+        { boxShadow: '0 0 0 6px rgba(180, 138, 90, 0.25)' },
+        { boxShadow: '0 0 0 0 rgba(180, 138, 90, 0)' },
+      ],
+      { duration: 900, iterations: 1 }
     );
   }
   window.addEventListener('hashchange', highlightFromHash);
