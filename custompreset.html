@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Custom Preset Manager 사용 설명서</title>
+<meta name="description" content="실리태번 확장 Custom Preset Manager의 기능을 상황별로 정리한 설명서.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Custom Preset Manager 사용 설명서">
+<meta property="og:description" content="프리셋 프롬프트를 입력창 위에서 바로 켜고 끄는 확장. 어떤 기능이 어떤 상황에 쓰이는지 정리했습니다.">
+<meta property="og:url" content="https://keepsanity.github.io/custompreset.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/guide.css">
+</head>
+<body class="guide-page">
+
+<a class="skip" href="#start">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">💗</span>
+      <span class="brand-text">Silly Tools</span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#start">처음 세 가지</a>
+      <a href="#more">더 필요해지면</a>
+      <a href="#install">설치</a>
+      <a href="index.html">전체 프로젝트</a>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="다크 모드 전환" title="다크 모드 전환">
+      <span aria-hidden="true" data-theme-icon>🌙</span>
+    </button>
+    <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-nav">
+      <span aria-hidden="true">☰</span>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴" hidden>
+    <a href="#start">처음 세 가지</a>
+    <a href="#more">더 필요해지면</a>
+    <a href="#install">설치</a>
+    <a href="index.html">전체 프로젝트</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ───────── HERO ───────── -->
+  <section class="g-hero">
+    <div class="wrap">
+      <p class="eyebrow">SILLYTAVERN · EXTENSION · 사용 설명서</p>
+      <h1>Custom Preset Manager</h1>
+      <p class="g-hero-sub">커스텀 프리셋 매니저</p>
+      <p class="g-lead">
+        프리셋 안의 프롬프트를 <strong>입력창 위에서 바로</strong> 켜고 끄는 확장입니다.
+        프롬프트 매니저를 열지 않고 조합을 바꾸고, 상황에 따라 알아서 켜지도록 만들 수도 있습니다.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-lg btn-primary" href="#start">기능 보기 ↓</a>
+        <a class="btn btn-lg btn-outline" href="#install">설치 방법</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 처음 세 가지 ───────── -->
+  <section id="start" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">01</span> 처음이라면 이 세 가지</h2>
+        <p class="section-sub">
+          설정에 항목이 많지만 처음부터 전부 켤 필요는 없습니다. 아래 세 가지면 충분합니다.
+        </p>
+      </div>
+
+      <div class="g-list">
+
+        <article class="g-item">
+          <p class="g-problem">프롬프트 하나 켜고 끄자고 매번 프롬프트 매니저를 열게 됩니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">빠른 프롬프트 토글</span>
+            <p>자주 쓰는 프롬프트에 토글 버튼을 달아 입력창 바로 위에 놓습니다. 채팅을 이어가면서 그 자리에서 켜고 끌 수 있습니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>빠른 프롬프트 토글 표시</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">지금 켜둔 조합이 실제로 어떤 프롬프트로 조립되는지 확인할 방법이 없습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">프롬프트 미리보기</span>
+            <p>실제로 전송될 프롬프트를 순서대로 카드에 펼쳐 보여줍니다. 무엇이 어디에 들어갔는지 보낸 뒤에 짐작하지 않아도 됩니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>프롬프트 미리보기 표시</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">다른 프리셋에 있는 좋은 프롬프트를 지금 프리셋으로 가져오고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">프리셋 커스텀 패널</span>
+            <p>가지고 있는 모든 프리셋의 프롬프트를 목록으로 펼쳐 봅니다. 내용을 복사하거나, 지금 쓰는 프리셋에 그대로 추가할 수 있습니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>프리셋 커스텀하기 버튼 표시</b></p>
+        </article>
+
+      </div>
+
+      <div class="g-callout">
+        <p><b>설정은 어디에 있나요?</b> 실리태번 확장 메뉴(퍼즐 조각 아이콘) → <b>Custom Preset Manager</b> 를 펼치면 아래 기능들을 하나씩 켜고 끌 수 있습니다.</p>
+        <p>기능을 끄면 관련된 버튼과 메뉴가 화면에서 사라질 뿐, 저장해둔 설정은 지워지지 않습니다. 부담 없이 켜보고 맞지 않으면 다시 끄면 됩니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 더 필요해지면 ───────── -->
+  <section id="more" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">02</span> 이런 게 필요해지면</h2>
+        <p class="section-sub">쓰다 보면 하나씩 아쉬워지는 것들입니다. 해당되는 것만 켜세요.</p>
+      </div>
+
+      <div class="g-list">
+
+        <article class="g-item">
+          <p class="g-problem">매번 같이 켜고 같이 끄는 프롬프트가 여러 개 있습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">토글 그룹</span>
+            <p>여러 프롬프트를 버튼 하나로 묶습니다. 그룹 버튼을 누르면 묶인 프롬프트가 한꺼번에 켜지고 꺼집니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>토글 그룹 기능</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">조합을 이리저리 바꿔보다가, 원래 쓰던 조합으로 돌아가지 못합니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">토글 프리셋</span>
+            <p>지금의 on/off 조합을 통째로 저장해두고 이름으로 불러옵니다. 프리셋 자체를 바꾸지 않고 조합만 갈아끼우는 방식입니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>토글 프리셋 표시</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">같은 캐릭터라도 채팅방마다 쓰는 프리셋이 다릅니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">연결 프리셋</span>
+            <p>채팅방마다 쓸 프리셋을 지정해두면, 그 방에 들어갈 때 자동으로 전환됩니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>연결 프리셋 표시</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">특정 내용이 나올 때만 필요한 프롬프트를, 매번 직접 켜고 끄고 있습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">프롬프트 키워드 트리거</span>
+            <p>최근 대화에 지정한 키워드가 있을 때만 프롬프트를 넣습니다. 로어북과 같은 방식이라 <code>/정규식/</code> 도 쓸 수 있고, 뒤에서 몇 개의 메시지까지 검사할지 프롬프트마다 따로 정할 수 있습니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>프롬프트 키워드 트리거</b> · 프롬프트 편집의 Triggers 목록에 <b>키워드</b>가 추가됩니다</p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">프롬프트 순서를 바꾸려면 목록에서 끌어다 옮겨야 합니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">프롬프트 위치 정하기</span>
+            <p>위치를 목록에서 골라 정합니다. 추가할 때도, 나중에 바꿀 때도 끌어다 옮기지 않아도 됩니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>프롬프트 위치 정하기</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">채팅에 나온 문장을 프롬프트로 옮겨두고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">채팅에서 프롬프트 담기</span>
+            <p>메시지의 코드블럭이나 드래그한 텍스트를 그 자리에서 프리셋 프롬프트로 저장합니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>채팅에서 프롬프트 담기</b></p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 켜두면 편한 것들 ───────── -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">03</span> 켜두면 편한 것들</h2>
+        <p class="section-sub">화면을 바꾸지는 않지만, 켜두면 손이 덜 가는 설정입니다.</p>
+      </div>
+
+      <div class="g-mini-list">
+        <div class="g-mini">
+          <b>프리셋 자동 저장</b>
+          <span>프롬프트를 수정해 저장하면 프리셋까지 함께 저장합니다. 저장을 잊어 작업이 날아가는 일이 없어집니다.</span>
+        </div>
+        <div class="g-mini">
+          <b>프롬프트 자동 연결</b>
+          <span>새로 만든 프롬프트를 목록에 자동으로 연결합니다. 만들었는데 어디에도 안 보이는 상황을 막아줍니다.</span>
+        </div>
+        <div class="g-mini">
+          <b>빠른 토글 접기</b>
+          <span>토글 버튼이 늘어나면 입력창 위가 좁아집니다. 평소에는 접어두고 필요할 때만 펼칩니다.</span>
+        </div>
+        <div class="g-mini">
+          <b>번역 기능</b>
+          <span>확장의 메뉴와 안내 문구를 한국어와 영어 중에서 고릅니다.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 설치 ───────── -->
+  <section id="install" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">04</span> 설치</h2>
+        <p class="section-sub">실리태번 안에서 Git URL로 바로 설치합니다.</p>
+      </div>
+
+      <div class="g-install">
+        <ol>
+          <li>실리태번 상단의 <b>확장 메뉴(퍼즐 조각 아이콘)</b>를 엽니다.</li>
+          <li><b>Install extension</b> 버튼을 누릅니다.</li>
+          <li>아래 주소를 붙여넣고 설치합니다.</li>
+          <li>설치가 끝나면 <b>새로고침(F5)</b> 합니다.</li>
+        </ol>
+        <div class="code-row">
+          <code>https://github.com/keepsanity/SillyTavern-CustomPreset</code>
+          <button class="btn btn-sm btn-outline" type="button" data-copy="https://github.com/keepsanity/SillyTavern-CustomPreset">복사</button>
+        </div>
+        <p class="tiny">※ 업데이트는 확장 목록에서 이 확장의 <b>Update</b> 버튼으로 할 수 있습니다.</p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/keepsanity/SillyTavern-CustomPreset" target="_blank" rel="noopener">GitHub 저장소 ↗</a>
+        <a class="btn btn-outline" href="index.html#projects">다른 확장 · 도구 보기</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">💗</p>
+      <p class="tiny">Custom Preset Manager 사용 설명서</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">전체 프로젝트</a>
+      <a href="index.html#guide">설치법</a>
+      <a href="https://github.com/keepsanity" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

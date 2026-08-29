@@ -4,6 +4,7 @@
 
    type   : 'web'(웹 도구) | 'ext'(확장) | 'theme'(테마) — 카드 색은 이 값에 따라 자동으로 정해집니다
    site   : 바로 열 수 있는 주소 (없으면 null)
+   guide  : 이 사이트 안의 설명서 페이지 (예: 'custompreset.html', 없으면 생략)
    repo   : GitHub 저장소 주소
    git    : 확장 설치용 Git URL (확장만, 없으면 null)
    ============================================================ */
@@ -67,6 +68,7 @@ const PROJECTS = [
     desc: '프리셋 안의 프롬프트를 목록으로 펼쳐보고, 자주 쓰는 프롬프트에 토글 버튼을 달아 입력창 위에서 바로 켜고 끕니다. 여러 프롬프트를 묶는 토글 그룹, 채팅방별 프리셋 자동 적용, 채팅 내용에서 프롬프트로 캡처하기까지 지원합니다.',
     features: ['프롬프트 목록 · 검색', '퀵 토글 버튼', '토글 그룹', '토글 프리셋', '채팅방별 프리셋 연결', '채팅에서 캡처'],
     site: null,
+    guide: 'custompreset.html',
     repo: 'https://github.com/keepsanity/SillyTavern-CustomPreset',
     git: 'https://github.com/keepsanity/SillyTavern-CustomPreset',
   },

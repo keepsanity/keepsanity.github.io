@@ -157,8 +157,16 @@
       actions.appendChild(open);
     }
 
+    /* 설명서는 같은 사이트 안의 페이지라 새 탭으로 열지 않습니다 */
+    if (p.guide) {
+      const guide = el('a', 'btn btn-primary', '설명서 보기');
+      guide.href = p.guide;
+      actions.appendChild(guide);
+    }
+
     if (p.git) {
-      const copy = el('button', 'btn btn-primary', 'Git URL 복사');
+      /* 설명서가 있으면 그쪽이 첫 번째 행동이 되도록 한 단계 낮춥니다 */
+      const copy = el('button', p.guide ? 'btn btn-outline' : 'btn btn-primary', 'Git URL 복사');
       copy.type = 'button';
       copy.setAttribute('data-copy', p.git);
       actions.appendChild(copy);
