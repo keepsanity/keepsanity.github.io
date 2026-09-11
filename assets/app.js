@@ -281,9 +281,33 @@
 
     const actions = el('div', 'theme-actions');
 
-    const download = el('a', 'btn btn-sm btn-primary', '다운로드');
-    download.href = THEME_RAW + t.file.split('/').map(encodeURIComponent).join('/');
-    download.setAttribute('download', t.name + '.json');
+    const download = el('button', 'btn btn-sm btn-primary', '다운로드');
+    download.type = 'button';
+    download.addEventListener('click', async () => {
+      if (download.disabled) return;
+      download.disabled = true;
+      download.textContent = '받는 중…';
+      try {
+        const response = await fetch(THEME_RAW + t.file.split('/').map(encodeURIComponent).join('/'), { cache: 'no-cache' });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        const text = await response.text();
+        JSON.parse(text); // Never save an error page as a theme.
+        const url = URL.createObjectURL(new Blob([text], { type: 'application/octet-stream' }));
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = t.file.split('/').pop();
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        // Give mobile browsers time to begin reading the download.
+        setTimeout(() => URL.revokeObjectURL(url), 60000);
+      } catch (error) {
+        showToast('파일을 받지 못했어요. 잠시 후 다시 시도하거나 보기에서 확인해 주세요.');
+      } finally {
+        download.disabled = false;
+        download.textContent = '다운로드';
+      }
+    });
     actions.appendChild(download);
 
     const view = el('a', 'btn btn-sm btn-ghost', '보기 ↗');
