@@ -130,8 +130,8 @@ const PROJECTS = [
     sub: '실리태번 채팅 테마',
     type: 'theme',
     emoji: '🎨',
-    desc: '어벤져스 · 판타스틱 포 · 엑스맨의 Marvel Light V1부터 c.ai, iMessage, Mono V2까지. 마음에 드는 JSON을 받아 실리태번에서 불러오기만 하면 됩니다.',
-    features: ['Marvel Light V1 · 3종', 'Cai Dark', 'iMessage', 'Mono V2 White / Dark'],
+    desc: '딸기 밀크티 색감의 Sweethearts와 어벤져스 · 판타스틱 포 · 엑스맨의 Marvel Light V1부터 c.ai, iMessage, Mono V2까지. 마음에 드는 JSON을 받아 실리태번에서 불러오기만 하면 됩니다.',
+    features: ['Sweethearts', 'Marvel Light V1 · 3종', 'Cai Dark', 'iMessage', 'Mono V2 White / Dark'],
     site: null,
     repo: 'https://github.com/keepsanity/SillyTheme',
     git: null,
@@ -147,6 +147,13 @@ const PROJECTS = [
    ============================================================ */
 
 const THEMES = [
+  {
+    name: 'Sweethearts',
+    tag: '딸기 밀크티 · 라이트',
+    file: 'Sweethearts.json',
+    swatch: ['#f6f0e6', '#f6e9e0', '#e2c4b8'],
+    dark: false,
+  },
   {
     name: 'Avengers · Command',
     tag: 'Marvel Light V1',
