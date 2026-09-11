@@ -8,6 +8,7 @@
   const $$ = (sel, root) => Array.from((root || document).querySelectorAll(sel));
 
   const TYPE_LABEL = { web: '웹 도구', ext: '확장', theme: '테마' };
+  const visibleThemes = typeof THEMES !== 'undefined' ? THEMES.filter((theme) => !theme.hidden) : [];
 
   /* ---------------- 테마(라이트/다크) ---------------- */
   const root = document.documentElement;
@@ -235,7 +236,7 @@
     $$('[data-count]').forEach((node) => {
       const type = node.dataset.count;
       if (type === 'theme' && typeof THEMES !== 'undefined') {
-        node.textContent = THEMES.length;
+        node.textContent = visibleThemes.length;
       } else {
         node.textContent = PROJECTS.filter((p) => p.type === type).length;
       }
@@ -298,7 +299,7 @@
 
   if (themeGrid && typeof THEMES !== 'undefined') {
     const frag = document.createDocumentFragment();
-    THEMES.forEach((t) => frag.appendChild(buildThemeCard(t)));
+    visibleThemes.forEach((t) => frag.appendChild(buildThemeCard(t)));
     themeGrid.appendChild(frag);
   }
 

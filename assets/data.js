@@ -130,8 +130,8 @@ const PROJECTS = [
     sub: '실리태번 채팅 테마',
     type: 'theme',
     emoji: '🎨',
-    desc: 'c.ai 스타일, iMessage 스타일, 그리고 모노 계열(화이트 · 블랙 · 파스텔)까지. 마음에 드는 JSON을 받아 실리태번에서 불러오기만 하면 됩니다.',
-    features: ['Cai Dark', 'iMessage', 'Mono White / Dark', 'Mint · Chocolate · Pistachio · StrawberryMilk'],
+    desc: '어벤져스 · 판타스틱 포 · 엑스맨의 Marvel Light V1부터 c.ai, iMessage, Mono V2까지. 마음에 드는 JSON을 받아 실리태번에서 불러오기만 하면 됩니다.',
+    features: ['Marvel Light V1 · 3종', 'Cai Dark', 'iMessage', 'Mono V2 White / Dark'],
     site: null,
     repo: 'https://github.com/keepsanity/SillyTheme',
     git: null,
@@ -141,11 +141,33 @@ const PROJECTS = [
 
 /* ============================================================
    테마 목록 (SillyTheme 저장소의 파일들)
+   hidden : true면 사이트 목록과 테마 개수에서 제외
    file   : 저장소 안의 경로
    swatch : [배경, 내 말풍선, 상대 말풍선/강조] — 테마 JSON의 실제 색값
    ============================================================ */
 
 const THEMES = [
+  {
+    name: 'Avengers · Command',
+    tag: 'Marvel Light V1',
+    file: 'Marvel Light V1/Avengers-Command.json',
+    swatch: ['#f2f3f5', '#f3f5f8', '#b33046'],
+    dark: false,
+  },
+  {
+    name: 'Fantastic Four · Baxter',
+    tag: 'Marvel Light V1',
+    file: 'Marvel Light V1/Fantastic-Four-Baxter.json',
+    swatch: ['#eff6fa', '#e8f4fc', '#086ba6'],
+    dark: false,
+  },
+  {
+    name: 'X-Men · First Class',
+    tag: 'Marvel Light V1',
+    file: 'Marvel Light V1/X-Men-First-Class.json',
+    swatch: ['#f8f6ee', '#fff8da', '#f2cc44'],
+    dark: false,
+  },
   {
     name: 'Chat Cai Dark',
     tag: 'c.ai 스타일',
@@ -177,6 +199,7 @@ const THEMES = [
   {
     name: 'Chat Mono',
     tag: 'Mono V1',
+    hidden: true,
     file: 'Chat Mono V1/Chat Mono.json',
     swatch: ['#ffffff', '#f7f7f7', '#0f0f0f'],
     dark: false,
@@ -184,6 +207,7 @@ const THEMES = [
   {
     name: 'Chat Mint',
     tag: 'Mono V1',
+    hidden: true,
     file: 'Chat Mono V1/Chat Mint.json',
     swatch: ['#f2fffa', '#e5fbf4', '#32a082'],
     dark: false,
@@ -191,6 +215,7 @@ const THEMES = [
   {
     name: 'Chat Chocolate',
     tag: 'Mono V1',
+    hidden: true,
     file: 'Chat Mono V1/Chat Chocolate.json',
     swatch: ['#fcf5ee', '#f9ecdf', '#a55f32'],
     dark: false,
@@ -198,6 +223,7 @@ const THEMES = [
   {
     name: 'Chat Pistachio',
     tag: 'Mono V1',
+    hidden: true,
     file: 'Chat Mono V1/Chat Pistachio.json',
     swatch: ['#f8fcf0', '#f0f9e8', '#789b3c'],
     dark: false,
@@ -205,6 +231,7 @@ const THEMES = [
   {
     name: 'Chat StrawberryMilk',
     tag: 'Mono V1',
+    hidden: true,
     file: 'Chat Mono V1/Chat StrawberryMilk.json',
     swatch: ['#fff5f8', '#fff0f4', '#cd5573'],
     dark: false,
