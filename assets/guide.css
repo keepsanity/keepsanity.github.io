@@ -98,6 +98,30 @@
 .g-callout p + p { margin-top: .5rem; }
 .g-callout b { color: var(--ink); font-weight: 700; }
 
+/* ---------- 외부 모음 배너 ---------- */
+.g-promo {
+  display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+  border: 1.5px solid color-mix(in srgb, var(--card-accent) 45%, var(--line));
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--card-accent) 16%, var(--surface)),
+      color-mix(in srgb, var(--card-accent) 5%, var(--surface)));
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(var(--shadow-rgb), .07);
+  padding: 1.5rem 1.6rem;
+}
+.g-promo-emoji { font-size: 2.4rem; line-height: 1; }
+.g-promo-body { flex: 1 1 260px; min-width: 0; }
+.g-promo-title { margin: 0 0 .35rem; font-size: clamp(1.1rem, 2.2vw, 1.3rem); font-weight: 800; color: var(--ink); }
+.g-promo-body p { margin: 0; font-size: .9rem; color: var(--ink-2); }
+.g-promo-body p + p { margin-top: .4rem; }
+.g-promo .btn { flex-shrink: 0; }
+
+@media (max-width: 560px) {
+  .g-promo { padding: 1.25rem 1.15rem; }
+  .g-promo .btn { width: 100%; justify-content: center; }
+}
+
 /* ---------- 설치 ---------- */
 .g-install {
   background: var(--surface);
