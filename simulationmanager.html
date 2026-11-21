@@ -273,7 +273,7 @@
           <p class="g-problem">요청이 대화 속 어디에 들어가는지에 따라 답변이 달라집니다.</p>
           <div class="g-solve">
             <span class="g-badge">주입 위치</span>
-            <p>잘 모르겠다면 기본값 <b>마지막 메시지</b>를 그대로 두세요. 요청이 대화 기록 맨 끝에 들어갑니다. <b>깊이 1</b>은 최근 메시지 바로 앞에, <b>맨 밑</b>은 대화 기록 바깥, 프롬프트 맨 끝에 넣습니다. 프리셋이 대화 뒤에 지시문을 많이 붙여서 요청이 묻힐 때는 <b>맨 밑</b>을 써보세요.</p>
+            <p>잘 모르겠다면 기본값 <b>마지막 메시지 (깊이 0)</b>을 그대로 두세요. 요청이 대화 기록 맨 끝, 최근 메시지 바로 뒤에 들어갑니다. <b>마지막 메시지 (임시 삽입)</b>은 같은 자리에 요청을 잠깐 진짜 유저 메시지로 넣었다가 뺍니다. <b>깊이 1</b>은 최근 메시지 바로 앞에, <b>맨 밑</b>은 대화 기록 바깥, 시스템 프롬프트까지 다 끝난 프롬프트 맨 끝에 넣습니다.</p>
           </div>
           <p class="g-where"><span class="g-where-label">찾는 곳</span>새 시뮬레이션 → <b>실행 옵션 → 주입 위치</b> · 기본값은 설정 → <b>기본 주입 위치</b></p>
         </article>
@@ -312,7 +312,7 @@
             <p><code>/sim name=</code> 까지 치면 저장된 프롬프트 제목이 자동완성으로 뜨고, <code>/sim name="던전 시뮬"</code> 처럼 실행합니다. 아무 요청이나 바로 던지려면 <code>/sim 만약 지금 비가 왔다면?</code> 처럼 뒤에 내용을 쭉 적으면 됩니다. 백그라운드에서 생성해 지금 방의 시뮬 목록에 저장합니다.</p>
             <p>이렇게 바로 적은 즉석 요청은 저장된 프롬프트에 자동 저장되지 않습니다.</p>
           </div>
-          <p class="g-where"><span class="g-where-label">옵션</span><code>preset=</code> 프리셋 (자동완성) · <code>position=</code> 요청 넣을 위치 <code>last_message</code> / <code>depth_1</code> / <code>bottom</code> · <code>quiet=true</code> 알림 숨기기 · <code>open=true</code> 끝나면 시뮬 창 띄우기 · <code>return=</code> 결과를 다음 명령으로 넘기기 (예: <code>return=pipe</code>)</p>
+          <p class="g-where"><span class="g-where-label">옵션</span><code>preset=</code> 프리셋 (자동완성) · <code>position=</code> 요청 넣을 위치 <code>depth_0</code> / <code>temp_message</code> / <code>depth_1</code> / <code>bottom</code> · <code>quiet=true</code> 알림 숨기기 · <code>open=true</code> 끝나면 시뮬 창 띄우기 · <code>return=</code> 결과를 다음 명령으로 넘기기 (예: <code>return=pipe</code>)</p>
         </article>
 
       </div>
