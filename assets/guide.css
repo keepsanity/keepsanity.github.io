@@ -61,6 +61,7 @@
   border: 1px solid color-mix(in srgb, var(--card-accent) 28%, transparent);
 }
 .g-solve p { margin: 0; font-size: .93rem; color: var(--ink-2); }
+.g-solve p + p { margin-top: .5rem; }
 
 .g-where {
   margin: 1rem 0 0; padding-top: .85rem;

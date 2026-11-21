@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulation Manager 사용 설명서</title>
+<meta name="description" content="실리태번 확장 Simulation Manager의 기능을 상황별로 정리한 설명서.">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simulation Manager 사용 설명서">
+<meta property="og:description" content="메인 롤플레이를 건드리지 않고 시뮬레이션(OOC 요청)을 돌려보는 확장. 어떤 기능이 어떤 상황에 쓰이는지 정리했습니다.">
+<meta property="og:url" content="https://keepsanity.github.io/simulationmanager.html">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/guide.css">
+</head>
+<body class="guide-page">
+
+<a class="skip" href="#start">본문으로 건너뛰기</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">💗</span>
+      <span class="brand-text">Silly Tools</span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#start">기본 사용법</a>
+      <a href="#refine">다듬기</a>
+      <a href="#use">활용하기</a>
+      <a href="#backup">백업</a>
+      <a href="#install">설치</a>
+    </nav>
+    <button id="theme-toggle" class="icon-btn" type="button" aria-label="다크 모드 전환" title="다크 모드 전환">
+      <span aria-hidden="true" data-theme-icon>🌙</span>
+    </button>
+    <button id="nav-toggle" class="icon-btn nav-toggle" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobile-nav">
+      <span aria-hidden="true">☰</span>
+    </button>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="모바일 메뉴" hidden>
+    <a href="#start">기본 사용법</a>
+    <a href="#refine">다듬기</a>
+    <a href="#use">활용하기</a>
+    <a href="#more">더 필요해지면</a>
+    <a href="#backup">백업</a>
+    <a href="#install">설치</a>
+    <a href="index.html">전체 프로젝트</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ───────── HERO ───────── -->
+  <section class="g-hero">
+    <div class="wrap">
+      <p class="eyebrow">SILLYTAVERN · EXTENSION · 사용 설명서</p>
+      <h1>Simulation Manager</h1>
+      <p class="g-hero-sub">시뮬레이션 매니저</p>
+      <p class="g-lead">
+        "만약 이랬다면?" 같은 OOC 요청을 <strong>메인 롤플레이와 따로</strong> 돌려보는 확장입니다.
+        시뮬레이션은 채팅에 메시지로 남지 않고, 다음 답장 때 AI에게 보내지지도 않습니다.
+        채팅방마다 목록으로 쌓아두고, 답변을 여러 개 뽑아 넘겨보며 고를 수 있습니다.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-lg btn-primary" href="#start">사용법 보기 ↓</a>
+        <a class="btn btn-lg btn-outline" href="#install">설치 방법</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 기본 사용법 ───────── -->
+  <section id="start" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">01</span> 처음 한 번 돌려보기</h2>
+        <p class="section-sub">설정을 건드리지 않아도 바로 쓸 수 있습니다. 순서대로 따라 해보세요.</p>
+      </div>
+
+      <div class="g-install">
+        <ol>
+          <li>채팅방에서 입력창 왼쪽의 <b>지팡이 메뉴</b>를 열고 <b>시뮬레이션</b>을 누릅니다.</li>
+          <li><b>새 시뮬레이션</b>을 누르고 <b>내용</b>에 요청을 적습니다. 예: <code>{{char}}가 일기를 쓴다면 오늘 일을 어떻게 적을까?</code></li>
+          <li><b>시뮬 전송</b>을 누르면 답변이 생성됩니다. 생성 중에는 팝업을 닫아도 되고, 끝나면 알림이 뜹니다.</li>
+          <li>마음에 안 들면 <b>재생성</b>을 누르세요. 이전 답변은 지워지지 않고 하나씩 쌓이며, <b>‹ ›</b> 화살표로 넘겨볼 수 있습니다.</li>
+        </ol>
+        <p class="tiny">※ 생성 중에는 <b>재생성</b> 버튼이 <b>취소</b>로 바뀝니다. 메인 채팅이 답장을 생성하는 동안에는 시뮬 전송이 눌리지 않으니, 끝난 뒤에 보내세요.</p>
+      </div>
+
+      <div class="g-callout">
+        <p><b>시뮬 돌리려면 꼭 깔아야 하나요?</b> 아니요. 시뮬용 채팅방을 따로 파거나, 시뮬을 보낸 뒤 메시지를 hide · 삭제 처리하는 게 번거로워서 만든 확장입니다. 시뮬 답변을 전부 남겨두고 계속 보고 싶을 때, 시뮬용 채팅방을 따로 관리하고 싶지 않을 때 쓰면 좋습니다.</p>
+        <p><b>어떤 API로 생성하나요?</b> 시뮬은 좋은 모델로 받고 싶어서 <b>지금 연결된 메인 API</b>를 그대로 씁니다. 프리셋만 따로 고를 수 있고(<a href="#more">실행 옵션</a>), 번역과 로어북 요약에만 별도 연결 프로필을 지정할 수 있습니다.</p>
+      </div>
+
+      <div class="g-callout">
+        <p><b>메인 롤플레이에 정말 영향이 없나요?</b> 시뮬레이션은 채팅 파일 안에 따로 저장되고, 채팅 메시지로 추가되지 않습니다. 평소 답장을 받을 때 AI에게 보내지지 않습니다.</p>
+        <p>반대로 시뮬레이션을 만들 때는 <b>지금 채팅 내용</b>과 캐릭터 카드, 로어북을 평소처럼 읽습니다. 재생성할 때도 그 시점의 채팅을 다시 읽습니다.</p>
+        <p>시뮬레이션은 <b>채팅방(채팅 파일)마다</b> 따로 저장됩니다. 채팅을 지우면 그 방의 시뮬도 함께 사라지니, 남기고 싶은 건 <a href="#backup">백업</a>해두세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 답변 다듬기 ───────── -->
+  <section id="refine" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">02</span> 답변을 다듬고 싶을 때</h2>
+        <p class="section-sub">답변을 처음부터 다시 뽑지 않고, 이어 쓰거나 일부만 고칠 수 있습니다.</p>
+      </div>
+
+      <div class="g-list">
+
+        <article class="g-item">
+          <p class="g-problem">답변이 좋은데 너무 일찍 끝났습니다. 그다음이 궁금합니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">이어쓰기</span>
+            <p>원래 요청과 지금까지의 답변을 보고, 반복하거나 고쳐 쓰지 않고 다음 내용만 이어서 씁니다. 이어 쓴 내용은 답변 아래에 새 <b>파트</b>로 붙습니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>시뮬 상세 화면 아래 → <b>이어쓰기</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">이어서 쓰되, 이야기가 내가 원하는 방향으로 흘러갔으면 합니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">OOC 이어쓰기</span>
+            <p>"다음엔 비가 쏟아진다"처럼 방향을 적어주면, 분위기가 바뀌더라도 그 방향을 따라 이어 씁니다. 문체는 원래 답변을 그대로 따릅니다. 적은 지시는 화면에 따로 보이지 않고, 마지막에 쓴 지시만 저장돼서 다음에 다시 채워집니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>시뮬 상세 화면 아래 → <b>OOC</b> (표지판 아이콘)</p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">전체는 괜찮은데 한 부분만 마음에 안 듭니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">통제광</span>
+            <p>파트 하나를 골라 "대사를 더 짧게", "존댓말로" 같은 피드백을 적으면, AI가 편집자처럼 그 파트만 고쳐 씁니다. 이야기를 이어가지 않고 길이와 형식도 비슷하게 유지합니다. 고친 결과는 <b>새 답변</b>으로 저장되고, 원래 답변은 <b>‹</b> 로 돌아가면 그대로 있습니다. inSTead 확장에서 아이디어를 얻은 기능입니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>각 파트 옆 아이콘 → <b>통제광</b> (마술봉)</p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">AI에게 맡기기보다 직접 몇 글자 고치고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">파트 수정</span>
+            <p>파트 내용을 직접 고쳐 저장합니다. 통제광과 마찬가지로 원본을 덮어쓰지 않고, 고친 버전이 새 답변으로 추가됩니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>각 파트 옆 아이콘 → <b>수정</b> (연필)</p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">방금 이어 쓴 부분만 다시 뽑고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">이 파트 재생성</span>
+            <p>마지막으로 이어 쓴 파트만 다시 생성합니다. 이전 버전도 남아서 파트 머리의 작은 <b>‹ ›</b> 로 비교해볼 수 있습니다. 필요 없어진 이어쓰기 파트는 <b>삭제(✕)</b> 로 지웁니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>마지막 파트 옆 아이콘 → <b>이 파트 재생성</b> (↻)</p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">영어로 받은 답변을 한국어로 읽고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">응답 번역</span>
+            <p>파트마다 번역 버튼이 생깁니다. 한 번 번역한 내용은 시뮬과 함께 저장돼서 <b>번역 / 원문</b> 으로 오가며 볼 수 있고, 마음에 안 들면 <b>재번역</b> 합니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>응답 번역 기능 사용</b> · 번역에 쓸 <b>Connection Profile</b>을 꼭 골라두세요</p>
+        </article>
+
+      </div>
+
+      <div class="g-callout">
+        <p><b>답변과 파트는 뭐가 다른가요?</b> <b>답변</b>은 재생성할 때마다 하나씩 늘어나는 단위로, 응답 위의 <b>‹ ›</b> 와 <code>N / M</code> 으로 넘깁니다.</p>
+        <p><b>파트</b>는 한 답변 안의 조각입니다. 처음 생성된 내용이 1번 파트이고, 이어쓰기를 할 때마다 다음 파트가 붙습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 활용하기 ───────── -->
+  <section id="use" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">03</span> 답변을 활용하고 싶을 때</h2>
+        <p class="section-sub">마음에 든 시뮬은 채팅이나 로어북으로 옮길 수 있습니다.</p>
+      </div>
+
+      <div class="g-list">
+
+        <article class="g-item">
+          <p class="g-problem">시뮬 내용이 좋아서, 이걸 시작점으로 새 롤플레이를 하고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">새 챗</span>
+            <p>지금 보고 있는 답변을 첫 인사말로 삼아 같은 캐릭터와 새 채팅을 엽니다. <b>응답만</b>을 고르면 답변이 인사말이 되고, <b>요청 포함</b>을 고르면 내 요청이 유저 메시지로, 답변이 캐릭터 메시지로 들어갑니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>응답 위 버튼 → <b>새 챗</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">시뮬로 써본 장면을 지금 채팅에 그대로 이어 붙이고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">기존 챗</span>
+            <p>답변을 <b>현재 채팅의 맨 끝</b>에 캐릭터 메시지로 추가합니다. 새 챗과 마찬가지로 요청을 함께 넣을지 고를 수 있습니다. 이 버튼을 눌렀을 때만 시뮬 내용이 실제 채팅에 들어갑니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>응답 위 버튼 → <b>기존 챗</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">시뮬에서 정해진 설정을 앞으로도 기억하게 하고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">로어북 엔트리로 저장</span>
+            <p>답변을 요약해 로어북 엔트리로 만듭니다. 제목, 키워드, 본문이 미리 채워지니 확인하고 고친 뒤 저장하면 됩니다. 저장할 로어북, 활성화 방식(키워드 · 상시 · 벡터화), 위치와 깊이도 이 창에서 고릅니다. <b>저장</b>을 누르면 고른 로어북에 그 값 그대로 바로 들어갑니다.</p>
+            <p>⚠️ 버튼을 누르자마자 요약 요청이 바로 나갑니다. 요약이 마음에 안 들면 <b>다시 요약</b>을 누르세요.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>응답 위 버튼 → <b>로어북</b> · 기본값과 요약 프롬프트는 설정 → <b>로어북 엔트리 생성</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">이 시뮬을 채팅의 어느 시점에서 만들었는지 기억이 안 납니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">위치 표시 · 이동</span>
+            <p>답변마다 생성할 때 채팅의 마지막 메시지가 📍 <code>#번호 이름</code> 으로 표시됩니다. <b>이동</b>을 누르면 채팅이 그 메시지로 스크롤됩니다. 그사이 메시지가 지워졌다면 <b>삭제됨</b>으로 표시됩니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>시뮬 상세 화면 → 응답 위 📍 줄</p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">채팅에서 받은 답장 하나를 따로 보관해두고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">시뮬로 저장</span>
+            <p>AI 메시지를 그대로 시뮬 목록에 담습니다. 바로 앞의 내 메시지가 요청으로, 그 답장이 답변으로 들어갑니다. 담은 뒤에는 다른 시뮬처럼 이어쓰기나 재생성도 할 수 있습니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>AI 메시지의 <b>…</b> 메뉴 → 플라스크 아이콘 (<b>시뮬로 저장</b>)</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 더 필요해지면 ───────── -->
+  <section id="more" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">04</span> 이런 게 필요해지면</h2>
+        <p class="section-sub">쓰다 보면 하나씩 아쉬워지는 것들입니다. 대부분 새 시뮬레이션 화면의 접힌 항목 안에 있습니다.</p>
+      </div>
+
+      <div class="g-list">
+
+        <article class="g-item">
+          <p class="g-problem">자주 쓰는 시뮬 요청을 매번 다시 타이핑합니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">저장된 프롬프트</span>
+            <p>한 번 보낸 요청은 자동으로 저장돼서, 다음엔 목록에서 골라 바로 채울 수 있습니다. 제목이나 내용으로 검색하고 최신순 · 오래된순 · 이름순으로 정렬합니다. 저장하고 싶지 않은 일회성 요청은 <b>저장 옵션 → 이 프롬프트 저장 안 하기</b>를 체크하세요.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>새 시뮬레이션 → <b>저장된 프롬프트 불러오기</b> · 이름 바꾸기와 삭제는 설정 → <b>저장된 프롬프트 관리</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">시뮬만 다른 프리셋으로 돌리고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">실행 옵션 · 프리셋</span>
+            <p>시뮬을 생성하는 동안에만 고른 프리셋으로 바꿨다가, 끝나면 원래 프리셋으로 돌아옵니다. <a href="custompreset.html">Custom Preset Manager</a>의 토글 프리셋을 쓰고 있다면 <b>토글 프리셋</b>도 함께 고를 수 있습니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>새 시뮬레이션 → <b>실행 옵션</b> · 만든 뒤에는 상세 화면의 ⚙ 줄을 눌러 바꿉니다</p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">요청이 대화 속 어디에 들어가는지에 따라 답변이 달라집니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">주입 위치</span>
+            <p>잘 모르겠다면 기본값 <b>마지막 메시지</b>를 그대로 두세요. 요청이 대화 기록 맨 끝에 들어갑니다. <b>깊이 1</b>은 최근 메시지 바로 앞에, <b>맨 밑</b>은 대화 기록 바깥, 프롬프트 맨 끝에 넣습니다. 프리셋이 대화 뒤에 지시문을 많이 붙여서 요청이 묻힐 때는 <b>맨 밑</b>을 써보세요.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>새 시뮬레이션 → <b>실행 옵션 → 주입 위치</b> · 기본값은 설정 → <b>기본 주입 위치</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">입장을 바꿔서, 캐릭터가 내 입장이 되는 시뮬을 해보고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">변환 옵션</span>
+            <p><b>{{char}} ↔ {{user}} 교체</b>는 요청 안의 두 매크로를 서로 바꿉니다. <b>대명사 교체</b>는 요청 속 영어 대명사(he ↔ she 등)를 바꿉니다. <b>대신 쓸 단어</b>를 적으면 <code>{{char}}</code> · <code>{{user}}</code> 자리에 원래 이름 대신 그 단어가 들어갑니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>새 시뮬레이션 → <b>변환 옵션</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">같은 시뮬을 여러 캐릭터에게 한꺼번에 돌려보고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">여러 방에 보내기</span>
+            <p>보낼 캐릭터나 그룹을 체크하고 전송하면, 각 방을 차례로 열어 같은 요청으로 시뮬을 만들고 그 방의 목록에 저장합니다. 끝나면 원래 방으로 돌아옵니다. 진행 상황은 떠 있는 창에 표시되고 <b>중지</b>로 멈출 수 있습니다. 각 캐릭터의 <b>지금 열려 있는 채팅</b>으로 보내집니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>새 시뮬레이션 → <b>여러 방에 보내기</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">시뮬에 실제로 어떤 프롬프트가 보내지는지 확인하고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">전송 전 프롬프트 확인</span>
+            <p>보내기 직전에 조립이 끝난 프롬프트를 블록별로 펼쳐 보여주고, <b>전송</b>할지 <b>취소</b>할지 묻습니다. 사용할 프리셋, 주입 위치, 대략의 토큰 수도 함께 보입니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">켜는 곳</span>설정 → <b>전송 전 프롬프트 확인</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">팝업을 열지 않고 명령어나 빠른 답장으로 시뮬을 돌리고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">/sim 명령어</span>
+            <p><code>/sim name=</code> 까지 치면 저장된 프롬프트 제목이 자동완성으로 뜨고, <code>/sim name="던전 시뮬"</code> 처럼 실행합니다. 아무 요청이나 바로 던지려면 <code>/sim 만약 지금 비가 왔다면?</code> 처럼 뒤에 내용을 쭉 적으면 됩니다. 백그라운드에서 생성해 지금 방의 시뮬 목록에 저장합니다.</p>
+            <p>이렇게 바로 적은 즉석 요청은 저장된 프롬프트에 자동 저장되지 않습니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">옵션</span><code>preset=</code> 프리셋 (자동완성) · <code>position=</code> 요청 넣을 위치 <code>last_message</code> / <code>depth_1</code> / <code>bottom</code> · <code>quiet=true</code> 알림 숨기기 · <code>open=true</code> 끝나면 시뮬 창 띄우기 · <code>return=</code> 결과를 다음 명령으로 넘기기 (예: <code>return=pipe</code>)</p>
+        </article>
+
+      </div>
+
+      <div class="g-mini-list" style="margin-top:1.25rem">
+        <div class="g-mini">
+          <b>이름 · 아이콘 바꾸기</b>
+          <span>지팡이 메뉴와 팝업 머리에 보이는 "시뮬레이션"이라는 이름과 아이콘을 원하는 것으로 바꿀 수 있습니다. 설정 → <b>표시 설정</b>.</span>
+        </div>
+        <div class="g-mini">
+          <b>요청 · 제목 고치기</b>
+          <span>상세 화면에서 <b>시뮬 요청</b>의 <b>수정</b>으로 요청을 고치면 이후 재생성과 이어쓰기에 반영됩니다. 제목은 연필 버튼으로 바꿉니다.</span>
+        </div>
+        <div class="g-mini">
+          <b>완료 알림</b>
+          <span>시뮬이 끝나면 알림과 소리가 납니다. 알림을 누르면 그 시뮬로 바로 갑니다. 끄려면 설정 → <b>시뮬 완료 시 알림 표시</b>.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 백업 ───────── -->
+  <section id="backup" class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">05</span> 모아보기와 백업</h2>
+        <p class="section-sub">시뮬은 채팅 파일 안에 저장됩니다. 채팅을 지우기 전이나 기기를 옮길 때는 백업해두세요.</p>
+      </div>
+
+      <div class="g-list">
+
+        <article class="g-item">
+          <p class="g-problem">여러 채팅방에 흩어진 시뮬을 한곳에서 보고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">시뮬레이션 모아보기</span>
+            <p>시뮬이 있는 모든 채팅방을 최근 순으로 보여주고, 방을 눌러 시뮬을 읽을 수 있습니다. 읽기 전용이라, 고치거나 재생성하려면 그 채팅방에 들어가서 여세요. 목록이 실제와 다르면 <b>새로고침</b>, 지운 채팅이 남아 있으면 <b>정리</b>를 누릅니다. 정리는 목록만 정리하고 채팅 파일은 건드리지 않습니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>설정 → <b>시뮬레이션 모아보기</b></p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">시뮬을 파일로 보관하거나 다른 채팅방으로 옮기고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">백업 · 가져오기</span>
+            <p><b>이 방 백업</b>은 지금 방의 시뮬을 JSON 파일 하나로 내려받고, 모아보기의 <b>백업</b>은 전체 시뮬을 방별 JSON으로 나눠 zip 하나로 내려받습니다. <b>가져오기</b>로 이 파일들을 지금 방에 합칠 수 있습니다. zip처럼 방이 여러 개 든 파일은 가져올 방을 하나 고르고, 이미 있는 시뮬은 건너뜁니다.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">찾는 곳</span>시뮬 목록 오른쪽 위 <b>⋮</b> → 이 방 백업 · 가져오기 · 전체 삭제</p>
+        </article>
+
+        <article class="g-item">
+          <p class="g-problem">실리태번을 켜지 않고 휴대폰에서 시뮬을 읽고 싶습니다.</p>
+          <div class="g-solve">
+            <span class="g-badge">시뮬레이션 뷰어</span>
+            <p>백업 JSON을 웹에서 열어 채팅방별로 읽어보는 뷰어입니다. 이어쓰기 파트와 저장된 번역도 함께 보입니다. 지금은 JSON 파일을 하나씩만 열 수 있으니, 전체 백업 zip은 압축을 풀고 방별 파일을 여세요.</p>
+          </div>
+          <p class="g-where"><span class="g-where-label">열기</span><a href="https://keepsanity.github.io/simulation-viewer/" target="_blank" rel="noopener">keepsanity.github.io/simulation-viewer ↗</a></p>
+        </article>
+
+      </div>
+
+      <div class="g-callout">
+        <p><b>브랜치 채팅을 열었더니 시뮬이 그대로 있어요.</b> 브랜치는 부모 채팅의 시뮬을 그대로 물려받습니다. 처음 열 때 뜨는 알림을 누르면 브랜치의 시뮬만 비우고, 닫기(×)를 누르면 그대로 둡니다. 어느 쪽이든 부모 채팅은 바뀌지 않습니다.</p>
+        <p>저장된 프롬프트는 채팅이 아니라 <code>data/&lt;사용자&gt;/user/files/SillyTavern-SimulationManager-saved-prompts.json</code> 에 따로 저장됩니다. 실리태번 데이터를 옮길 때 이 파일도 함께 챙기세요.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────── 설치 ───────── -->
+  <section id="install" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title"><span class="num">06</span> 설치</h2>
+        <p class="section-sub">실리태번 안에서 Git URL로 바로 설치합니다.</p>
+      </div>
+
+      <div class="g-install">
+        <ol>
+          <li>실리태번 상단의 <b>확장 메뉴(퍼즐 조각 아이콘)</b>를 엽니다.</li>
+          <li><b>Install extension</b> 버튼을 누릅니다.</li>
+          <li>아래 주소를 붙여넣고 설치합니다.</li>
+          <li>설치가 끝나면 <b>새로고침(F5)</b> 합니다.</li>
+        </ol>
+        <div class="code-row">
+          <code>https://github.com/keepsanity/SillyTavern-SimulationManager</code>
+          <button class="btn btn-sm btn-outline" type="button" data-copy="https://github.com/keepsanity/SillyTavern-SimulationManager">복사</button>
+        </div>
+        <p class="tiny">※ 설정은 확장 메뉴 → <b>시뮬레이션 매니저</b>를 펼치면 있습니다. 업데이트는 확장 목록에서 이 확장의 <b>Update</b> 버튼으로 할 수 있습니다.</p>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/keepsanity/SillyTavern-SimulationManager" target="_blank" rel="noopener">GitHub 저장소 ↗</a>
+        <a class="btn btn-outline" href="index.html#projects">다른 확장 · 도구 보기</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <p class="footer-brand">💗</p>
+      <p class="tiny">Simulation Manager 사용 설명서</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">전체 프로젝트</a>
+      <a href="index.html#guide">설치법</a>
+      <a href="https://github.com/keepsanity" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</footer>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

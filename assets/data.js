@@ -32,6 +32,7 @@ const PROJECTS = [
     desc: '메인 롤플레이에 영향을 주지 않고 시뮬레이션(OOC 요청)을 관리하는 확장. 채팅방별로 시뮬 목록을 관리하고, 답변을 여러 개 뽑아 화살표로 넘겨보며 고를 수 있습니다. 전부 로컬에 저장됩니다.',
     features: ['채팅방별 시뮬 목록', '시뮬 프롬프트 저장 · 재사용', '답변 여러 개 생성', '전체 시뮬 모아보기', '백업 내보내기'],
     site: null,
+    guide: 'simulationmanager.html',
     repo: 'https://github.com/keepsanity/SillyTavern-SimulationManager',
     git: 'https://github.com/keepsanity/SillyTavern-SimulationManager',
     related: { label: '시뮬레이션 뷰어로 백업 열기', href: '#simulation-viewer' },
