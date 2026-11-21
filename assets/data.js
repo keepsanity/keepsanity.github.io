@@ -46,6 +46,7 @@ const PROJECTS = [
     desc: '답장을 받을 때마다 캐릭터의 습관이나 숨은 생각, 세계관 뒷설정 같은 TMI를 자동으로 만들어 메시지 아래에 붙여줍니다. 프롬프트·HTML·CSS를 직접 고쳐서 원하는 모양으로 바꿀 수 있어요.',
     features: ['답장마다 자동 생성', '접었다 펼치는 박스', '프롬프트 직접 수정', 'HTML · CSS 커스터마이즈'],
     site: null,
+    guide: 'tmigenerator.html',
     repo: 'https://github.com/keepsanity/SillyTavern-TMIGenerator',
     git: 'https://github.com/keepsanity/SillyTavern-TMIGenerator',
   },
